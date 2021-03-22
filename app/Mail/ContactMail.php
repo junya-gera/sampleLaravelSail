@@ -11,24 +11,15 @@ class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         //
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
         return $this->from('example@example.com')
-                    ->ciew('emails.contact');
+                    ->view('emails.contact')
+                    ->subject('お問い合わせメール');
     }
 }
