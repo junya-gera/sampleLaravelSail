@@ -9,6 +9,6 @@ class ContactMailController extends Controller
 {
     public function contact()
     {
-        Mail::to('junya-wada@msen.jp')->send(new ContactMail);
+        Mail::to('junya-wada@msen.jp')->queue(new ContactMail);
     }
 }
