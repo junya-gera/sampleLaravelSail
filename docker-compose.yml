@@ -15,6 +15,7 @@ services:
             LARAVEL_SAIL: 1
         volumes:
             - '.:/var/www/html'
+        entrypoint: ./start-container.sh
         networks:
             - sail
         depends_on:
