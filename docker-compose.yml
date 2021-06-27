@@ -15,6 +15,7 @@ services:
             LARAVEL_SAIL: 1
         volumes:
             - '.:/var/www/html'
+        entrypoint: ./start-container.sh
         networks:
             - sail
         depends_on:
@@ -22,7 +23,7 @@ services:
             - redis
             - selenium
     mysql:
-        image: 'mysql:8.0'
+        image: 'mysql:5.7'
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
         environment:
